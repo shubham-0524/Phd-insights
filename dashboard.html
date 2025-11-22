@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PhD Insights – Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./css/dashboard.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+  <header class="dash-header">
+    <nav>
+      <div class="dash-left">
+        <div class="brand-logo">P</div>
+        <span>PhD Insights</span>
+      </div>
+
+      <div class="dash-right">
+        <a href="./index.html">Home</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="app-main">
+
+    <!-- Controls Panel -->
+    <section class="controls-panel">
+      <div class="controls-header">
+        <h2>Dashboard</h2>
+        <p>Upload your Excel sheet and fine-tune using filters.</p>
+      </div>
+
+      <div class="controls-body">
+        <div class="upload-section">
+          <label for="file-input" class="file-label">
+            <span class="file-label-icon">⬆</span>
+            <span>Upload Excel (.xlsx) file</span>
+          </label>
+          <input type="file" id="file-input" accept=".xlsx,.xls" />
+          <p class="hint">
+            Expected columns: Domain, Project Type, Title,
+            Funding Agency, Amount(in lakhs), Status, Faculty
+          </p>
+        </div>
+
+        <div class="filters">
+          <div class="filter-group">
+            <label for="domain-filter">Domain</label>
+            <select id="domain-filter">
+              <option value="">All</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="status-filter">Status</label>
+            <select id="status-filter">
+              <option value="">All</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="faculty-filter">Faculty</label>
+            <select id="faculty-filter">
+              <option value="">All</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+      <div class="card"><h3>Total Projects</h3><p id="total-projects">-</p></div>
+      <div class="card"><h3>Total Funding (Lakhs)</h3><p id="total-funding">-</p></div>
+      <div class="card"><h3>Unique Domains</h3><p id="unique-domains">-</p></div>
+      <div class="card"><h3>Active vs Completed</h3><p id="status-breakdown">-</p></div>
+    </section>
+
+    <!-- Charts -->
+    <section class="charts-grid">
+      <div class="chart-card">
+        <h3>Projects by Domain</h3>
+        <canvas id="projects-by-domain"></canvas>
+      </div>
+
+      <div class="chart-card">
+        <h3>Funding by Domain (Lakhs)</h3>
+        <canvas id="funding-by-domain"></canvas>
+      </div>
+
+      <div class="chart-card">
+        <h3>Projects by Status</h3>
+        <canvas id="projects-by-status"></canvas>
+      </div>
+    </section>
+
+    <!-- Table -->
+    <section class="table-section">
+      <h2>Project Details</h2>
+      <div class="table-container">
+        <table id="projects-table">
+          <thead>
+            <tr>
+              <th>Domain</th>
+              <th>Project Type</th>
+              <th>Title</th>
+              <th>Funding Agency</th>
+              <th>Amount (Lakhs)</th>
+              <th>Status</th>
+              <th>Faculty Name</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <small>© 2025 PhD Insights · Research Dashboard</small>
+  </footer>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+/* =========================================================
+   DASHBOARD PAGE — DARK THEME
+   This file ONLY styles dashboard.html
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #020617;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* ============================
+   TOP NAVIGATION (Dark)
+============================ */
+.dash-header {
+  background: #0b1120;
+  border-bottom: 1px solid #1f2937;
+  padding: 0.8rem 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.dash-header nav {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dash-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dash-left .brand-logo {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dash-left span {
+  font-size: 1rem;
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+.dash-right a {
+  color: #93c5fd;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+
+.dash-right a:hover {
+  color: #ffffff;
+}
+
+/* ============================
+   MAIN WRAPPER
+============================ */
+.app-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ============================
+   CONTROLS PANEL
+============================ */
+.controls-panel {
+  background: #020617;
+  border-radius: 1rem;
+  border: 1px solid #1f2937;
+  padding: 1.3rem 1.4rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.controls-header h2 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.controls-header p {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.controls-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem 2rem;
+  align-items: flex-start;
+}
+
+/* Upload button */
+.upload-section {
+  min-width: 260px;
+}
+
+.file-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.1rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid #1d4ed8;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  color: #e5e7eb;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.45);
+  transition: 0.2s ease;
+}
+
+.file-label:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.6);
+}
+
+#file-input {
+  display: none;
+}
+
+.hint {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* Filter dropdowns */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.filter-group label {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+select {
+  min-width: 160px;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.7rem;
+  border: 1px solid #374151;
+  background-color: #020617;
+  color: #e5e7eb;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.9);
+  font-size: 0.85rem;
+}
+
+select:hover {
+  border-color: #4b5563;
+}
+
+select:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* ============================
+   SUMMARY CARDS
+============================ */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #020617;
+  border-radius: 0.8rem;
+  border: 1px solid #1f2937;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.75);
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: #4b5563;
+}
+
+.card h3 {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.card p {
+  margin-top: 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+/* ============================
+   CHARTS
+============================ */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.3rem;
+}
+
+.chart-card {
+  background: #020617;
+  border-radius: 0.8rem;
+  border: 1px solid #1f2937;
+  padding: 1rem;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.85);
+  transition: 0.2s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-2px);
+  border-color: #4b5563;
+}
+
+.chart-card h3 {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+}
+
+/* ============================
+   TABLE
+============================ */
+.table-section {
+  background: #020617;
+  border-radius: 0.8rem;
+  border: 1px solid #1f2937;
+  padding: 1.2rem 1.3rem 1.3rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+}
+
+.table-section h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.table-container {
+  max-height: 380px;
+  overflow: auto;
+  border-radius: 0.6rem;
+  border: 1px solid #1f2937;
+  margin-top: 0.7rem;
+}
+
+/* Scrollbar */
+.table-container::-webkit-scrollbar {
+  width: 8px;
+}
+.table-container::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 2rem;
+}
+
+/* Table */
+#projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+#projects-table thead {
+  background: #0f162b;
+  position: sticky;
+  top: 0;
+}
+
+#projects-table th {
+  padding: 0.6rem;
+  font-weight: 600;
+  color: #9ca3af;
+  border-bottom: 1px solid #1f2937;
+}
+
+#projects-table td {
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid #111827;
+}
+
+#projects-table tbody tr:nth-child(odd) {
+  background: #030712;
+}
+
+#projects-table tbody tr:hover {
+  background: #111827;
+}
+
+/* ============================
+   FOOTER (Dark)
+============================ */
+.app-footer {
+  text-align: center;
+  padding: 1.3rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  border-top: 1px solid #1f2937;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 780px) {
+  .app-main {
+    padding: 1rem;
+  }
+
+  .controls-body {
+    flex-direction: column;
+  }
+}
