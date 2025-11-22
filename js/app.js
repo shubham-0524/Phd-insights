@@ -1,5 +1,4 @@
-// Basic client-side dashboard for PhD research projects
-// Expects Excel columns: "Domain", "Project Type", "Title", "Funding Agency", "Amount(in lakhs)", "Status", "Faculty Name"
+
 
 const fileInput = document.getElementById("file-input");
 const domainFilter = document.getElementById("domain-filter");
